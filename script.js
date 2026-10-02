@@ -153,7 +153,7 @@ window.removeCart=function(i){cart.splice(i,1);updateCart();};
 function setActiveFilter(filter){document.querySelectorAll('.pill').forEach(x=>x.classList.toggle('active',x.dataset.filter===filter));document.querySelectorAll('.home-cat-btn').forEach(x=>x.classList.toggle('active',x.dataset.filter===filter));}
 function openCategory(filter){setActiveFilter(filter);renderProducts(filter,document.getElementById('searchInput').value);document.getElementById('featured').scrollIntoView({behavior:'smooth',block:'start'});}
 document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>openCategory(btn.dataset.filter)));
-document.querySelectorAll('.category-tile').forEach(btn=>btn.addEventListener('click',()=>openCategory(btn.dataset.category)));
+document.querySelectorAll('button[data-filter]').forEach(btn=>btn.addEventListener('click',()=>openCategory(btn.dataset.filter)));
 document.getElementById('searchInput').addEventListener('input',e=>{setActiveFilter('All');renderProducts('All',e.target.value);});
 document.getElementById('cartBtn').addEventListener('click',()=>document.getElementById('checkout').scrollIntoView({behavior:'smooth'}));
 document.getElementById('wishlistBtn').addEventListener('click',()=>showToast(`Wishlist-এ ${wishCount}টি item আছে`));
