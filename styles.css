@@ -7,7 +7,7 @@ button{cursor:pointer}
 .top-strip{background:#082e82;color:#fff;text-align:center;font-size:13px;padding:7px 10px}
 .header{background:#fff;border-bottom:1px solid #e4eaf2}
 .header-inner{max-width:1400px;margin:auto;display:grid;grid-template-columns:280px 1fr 390px;gap:25px;align-items:center;padding:10px 20px}
-.brand img{   width:80px;   height:80px;   object-fit:contain; }{width:240px;height:78px;object-fit:contain;display:block}
+.brand img{width:300px;height:100px;object-fit:contain;display:block;object-position:left center}
 .search-wrap{height:46px;border:1px solid #dbe4ef;border-radius:13px;display:flex;overflow:hidden;background:#f7faff}
 .search-wrap input{border:0;outline:0;background:transparent;flex:1;padding:0 16px;color:#1b3350}
 .search-wrap button{width:55px;border:0;background:transparent;font-size:29px;color:#0c3c92}
