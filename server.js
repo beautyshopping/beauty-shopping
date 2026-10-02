@@ -207,11 +207,62 @@ app.delete('/api/admin/products/:id',auth,(req,res)=>{
   res.json({ok:true});
 });
 
-app.post('/api/orders',(req,res)=>{
+app.post('/api/orders', async (req,res)=>{
   const {customerId=null,name,district,upazila,address,phone,items=[]}=req.body;
-  if(!name||!district||!upazila||!address||!phone||!items.length) return res.status(400).json({error:'সব তথ্য দিন এবং অন্তত ১টি product দিন'});
-  const orders=readJson(ORDERS_FILE,[]); const order={customerId, id:`BS-${Date.now()}`,createdAt:new Date().toISOString(),name,district,upazila,address,phone,items,deliveryCharge:110,status:'New'};
-  orders.unshift(order); writeJson(ORDERS_FILE,orders); res.status(201).json({ok:true,orderId:order.id});
+
+  if(!name||!district||!upazila||!address||!phone||!items.length){
+    return res.status(400).json({error:'সব তথ্য দিন এবং অন্তত ১টি product দিন'});
+  }
+
+  const orders=readJson(ORDERS_FILE,[]);
+  const order={
+    customerId,
+    id:`BS-${Date.now()}`,
+    createdAt:new Date().toISOString(),
+    name,
+    district,
+    upazila,
+    address,
+    phone,
+    items,
+    deliveryCharge:110,
+    status:'New'
+  };
+
+  orders.unshift(order);
+  writeJson(ORDERS_FILE,orders);
+
+  if(GOOGLE_SHEET_WEBHOOK_URL){
+    const subtotal=items.reduce((sum,item)=>sum + Number(item.price||0)*Number(item.qty||1),0);
+    const quantity=items.reduce((sum,item)=>sum + Number(item.qty||1),0);
+    const products=items.map(item=>`${item.name} x${item.qty||1}`).join(', ');
+
+    try{
+      await fetch(GOOGLE_SHEET_WEBHOOK_URL,{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          orderId:order.id,
+          customerName:name,
+          mobile:phone,
+          district,
+          upazila,
+          address,
+          products,
+          quantity,
+          subtotal,
+          deliveryCharge:110,
+          total:subtotal+110,
+          paymentMethod:'COD',
+          status:'Pending'
+        })
+      });
+    }catch(error){
+      console.error('Google Sheet webhook failed:',error);
+    }
+  }
+
+  res.status(201).json({ok:true,orderId:order.id});
 });
 
 app.get('/admin', (req,res)=>res.sendFile(path.join(ROOT,'admin.html')));
