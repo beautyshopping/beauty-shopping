@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty Shopping Marketplace</title>
+  <meta name="description" content="Beauty Shopping Marketplace — সারা বাংলাদেশে Cash on Delivery">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="top-strip">🔥 আজকের বিশেষ অফার • নতুন পণ্য আসছে প্রতিদিন &nbsp; | &nbsp; 🚚 সারা বাংলাদেশে Delivery ৳110 &nbsp; | &nbsp; 💵 Cash on Delivery</div>
 
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="#" aria-label="Beauty Shopping Home">
+        <img src="assets/logo.png" alt="Beauty Shopping">
+      </a>
+
+      <div class="search-wrap">
+        <input id="searchInput" type="search" placeholder="পণ্য খুঁজুন..." autocomplete="off">
+        <button id="searchBtn" aria-label="Search">⌕</button>
+      </div>
+
+      <div class="header-actions">
+        <button class="head-action" data-scroll="orderForm"><span>♙</span><small>Login</small></button>
+        <button class="head-action" data-scroll="orderForm"><span>♙+</span><small>Register</small></button>
+        <button class="head-action" id="wishlistBtn"><span>♡</span><small>Wishlist</small></button>
+        <button class="head-action cart-head" id="cartBtn"><span>🛒<b id="cartCount">0</b></span><small>Cart</small></button>
+        <div class="more-wrap">
+          <button class="head-action" id="moreBtn"><span>☰</span><small>More</small></button>
+          <div id="moreMenu" class="more-menu">
+            <button data-more="all">▦ All Categories</button>
+            <button data-more="new">🆕 New Arrivals</button>
+            <button data-more="deals">🔥 Hot Deals</button>
+            <button data-more="featured">⭐ Featured Products</button>
+            <button data-more="wishlist">❤️ Wishlist</button>
+            <button data-more="delivery">🚚 Delivery Information</button>
+            <button data-more="payment">💵 Payment Information</button>
+            <button data-more="contact">📞 Contact Us</button>
+            <a href="/admin.html">⚙️ Admin Panel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-home">⌂ <span>Home</span></a>
+      <button data-filter="Electronics & Gadgets">Electronics & Gadgets⌄</button>
+      <button data-filter="Mobile & Accessories">Mobile & Accessories⌄</button>
+      <button data-filter="Fashion & Clothing">Fashion & Clothing⌄</button>
+      <button data-filter="Shoes & Bags">Shoes & Bags⌄</button>
+      <button data-filter="Beauty & Personal Care">Beauty & Personal Care⌄</button>
+      <button data-filter="Baby & Kids">Baby & Kids⌄</button>
+      <button data-filter="Home & Living">Home & Living⌄</button>
+      <button data-filter="More">More⌄</button>
+    </div>
+  </nav>
+
+  <main class="page">
+    <!-- New blue hero: replaces the old pink banner -->
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="hero-brand">
+          <div class="hero-logo-box"><img src="assets/logo.png" alt=""></div>
+          <div>
+            <strong>BEAUTY SHOPPING</strong>
+            <b>MARKETPLACE</b>
+          </div>
+        </div>
+        <h1>এক জায়গায়<br><span>সবকিছু!</span></h1>
+        <p>Electronics থেকে Fashion, Baby, Beauty, Grocery আর বাংলাদেশের seasonal fresh food—সবকিছু সহজে খুঁজে অর্ডার করুন।</p>
+        <div class="hero-buttons">
+          <button id="shopNow">এখনই Shopping করুন →</button>
+          <button class="link-btn" data-scroll="productsSection">আজকের Deals দেখুন</button>
+        </div>
+        <div class="hero-points"><span>🚚 110 Delivery</span><span>💵 COD</span><span>✓ Easy Order</span><span>📞 01750475598</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-orb orb1"></div>
+        <div class="hero-orb orb2"></div>
+        <div class="floating-card fc1">🛍️<b>Easy Shopping</b><small>সব category এক জায়গায়</small></div>
+        <div class="floating-card fc2">🚚<b>Fast Delivery</b><small>সারা বাংলাদেশে</small></div>
+        <div class="floating-card fc3">💳<b>Cash on Delivery</b><small>পণ্য দেখে payment</small></div>
+      </div>
+    </section>
+
+    <section class="shop-layout">
+      <aside class="sidebar">
+        <div class="side-title">☰ &nbsp; পণ্যের বিভাগ</div>
+        <button class="cat active" data-filter="All"><span>▦</span> সব Category <i>›</i></button>
+        <button class="cat" data-filter="Electronics & Gadgets"><span>💻</span> Electronics & Gadgets <i>›</i></button>
+        <button class="cat" data-filter="Mobile & Accessories"><span>📱</span> Mobile & Accessories <i>›</i></button>
+        <button class="cat" data-filter="Fashion & Clothing"><span>👗</span> Fashion & Clothing <i>›</i></button>
+        <button class="cat" data-filter="Shoes & Bags"><span>👟</span> Shoes & Bags <i>›</i></button>
+        <button class="cat" data-filter="Beauty & Personal Care"><span>💄</span> Beauty & Personal Care <i>›</i></button>
+        <button class="cat" data-filter="Baby & Kids"><span>👶</span> Baby & Kids <i>›</i></button>
+        <button class="cat" data-filter="Home & Living"><span>🏠</span> Home & Living <i>›</i></button>
+        <button class="cat" data-filter="Grocery & Food"><span>🛒</span> Grocery & Food <i>›</i></button>
+        <button class="cat" data-filter="Fresh Mango"><span>🥭</span> Fresh Mango <i>›</i></button>
+        <button class="cat" data-filter="Sports & Fitness"><span>⚽</span> Sports & Fitness <i>›</i></button>
+        <button class="cat" data-filter="Watches & Jewellery"><span>⌚</span> Watches & Jewellery <i>›</i></button>
+        <div class="side-note"><b>🛡️ নিরাপদ Shopping</b><small>ভরসার সাথে অর্ডার করুন</small></div>
+      </aside>
+
+      <section class="products-area" id="productsSection">
+        <div class="section-head">
+          <div>
+            <h2 id="sectionTitle">Featured Products</h2>
+            <div class="underline"></div>
+          </div>
+          <label>Sort by:
+            <select id="sortSelect">
+              <option value="default">Default Sorting</option>
+              <option value="low">Price Low → High</option>
+              <option value="high">Price High → Low</option>
+              <option value="name">Name A → Z</option>
+            </select>
+          </label>
+        </div>
+        <div id="productsGrid" class="products-grid">
+          <div class="loading">Admin Panel থেকে product load হচ্ছে...</div>
+        </div>
+      </section>
+
+      <aside class="right-panel">
+        <div class="order-card">
+          <h3>🛒 আপনার অর্ডার</h3>
+          <div id="cartItems" class="cart-items">
+            <div class="empty-cart">এখনো কোনো product যোগ করা হয়নি।</div>
+          </div>
+          <div class="summary">
+            <div><span>Subtotal</span><b id="subtotal">৳ 0</b></div>
+            <div><span>Delivery Charge</span><b>৳ 110</b></div>
+            <div class="total-row"><span>Total</span><strong id="grandTotal">৳ 0</strong></div>
+          </div>
+        </div>
+
+        <form id="orderForm" class="checkout-card">
+          <h3>🚚 ডেলিভারি তথ্য</h3>
+          <p class="delivery-note">সারা বাংলাদেশে Delivery Charge: <b>৳110</b></p>
+
+          <label>আপনার নাম <em>*</em></label>
+          <input id="customerName" required placeholder="আপনার নাম লিখুন">
+
+          <label>জেলা <em>*</em></label>
+          <select id="district" required>
+            <option value="">জেলা নির্বাচন করুন</option>
+          </select>
+
+          <label>উপজেলা / থানা <em>*</em></label>
+          <select id="upazila" required disabled>
+            <option value="">আগে জেলা নির্বাচন করুন</option>
+          </select>
+
+          <label>মোবাইল নাম্বার <em>*</em></label>
+          <input id="phone" required inputmode="tel" maxlength="14" placeholder="01750475598">
+
+          <label>সম্পূর্ণ ঠিকানা <em>*</em></label>
+          <textarea id="address" required rows="3" placeholder="বাড়ি/রোড/এলাকার সম্পূর্ণ ঠিকানা"></textarea>
+
+          <label class="cod"><input type="radio" checked disabled> Cash on Delivery</label>
+          <button class="confirm" type="submit">🛒 অর্ডার কনফার্ম করুন</button>
+          <div id="orderMessage" class="order-message"></div>
+        </form>
+      </aside>
+    </section>
+
+    <section class="trust-row">
+      <div>🛡️ <b>100% Original</b><small>বিশ্বস্ত পণ্য</small></div>
+      <div>🚚 <b>সারা দেশে Delivery</b><small>Flat ৳110</small></div>
+      <div>💵 <b>Cash on Delivery</b><small>সহজ payment</small></div>
+      <div>🔒 <b>Secure Order</b><small>নিরাপদ তথ্য</small></div>
+    </section>
+  </main>
+
+  <a class="whatsapp" href="https://wa.me/8801750475598" target="_blank" rel="noopener">☏<span>WhatsApp</span></a>
+  <button class="chat-float" onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth'})">💬 <span>মেসেজ করুন<small>আমরা আছি আপনার সাথে</small></span></button>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="assets/logo.png" alt="Beauty Shopping"><small>আপনার বিশ্বস্ত Online Marketplace</small></div>
+      <div><b>Contact</b><span>01750475598</span><small>প্রতিদিন 9AM–10PM</small></div>
+      <div><b>Delivery</b><span>সারা বাংলাদেশে</span><small>Delivery Charge ৳110</small></div>
+      <div><b>Payment</b><span>Cash on Delivery</span><small>পণ্য দেখে payment</small></div>
+    </div>
+    <div class="copyright">© 2026 Beauty Shopping. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
