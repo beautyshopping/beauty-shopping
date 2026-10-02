@@ -14,6 +14,7 @@ const USERS_FILE = path.join(DATA, 'users.json');
 const MESSAGES_FILE = path.join(DATA, 'messages.json');
 const SETTINGS_FILE = path.join(DATA, 'settings.json');
 const MERCHANTS_FILE = path.join(DATA, 'merchants.json');
+
 const GOOGLE_SHEET_WEBHOOK_URL = process.env.GOOGLE_SHEET_WEBHOOK_URL || '';
 const UPLOADS = path.join(ROOT, 'uploads');
 fs.mkdirSync(DATA, { recursive: true });
