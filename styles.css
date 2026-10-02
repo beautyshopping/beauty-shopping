@@ -1,4 +1,4 @@
-
+*{box-sizing:border-box}
 :root{--blue:#123eaa;--blue2:#1733c7;--deep:#092e82;--orange:#ff7600;--bg:#f4f8ff;--text:#17324f;--muted:#66758a}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans Bengali",Poppins,Arial,sans-serif}
