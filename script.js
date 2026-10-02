@@ -105,11 +105,20 @@ function escapeHtml(v){ return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;'
 function renderProducts(filter="All", query="") {
   const q=query.trim().toLowerCase();
   const groups={
-    "Food":["Grocery & Food","Mango"],
-    "Grocery & Food":["Grocery & Food"],
-    "Fashion":["Fashion"],
-    "Baby & Kids":["Baby & Kids"],
-    "All":[...new Set(products.map(p=>p.category))]
+   const groups={
+  "Electronics":["Electronics","Electronics & Gadgets"],
+  "Fashion":["Fashion","Fashion & Clothing"],
+  "Beauty":["Beauty & Personal Care"],
+  "Shoes":["Shoes & Bags"],
+  "Grocery":["Grocery & Food"],
+  "Food":["Grocery & Food","Mango"],
+  "Grocery & Food":["Grocery & Food"],
+  "Baby & Kids":["Baby & Kids"],
+  "Home":["Home & Living"],
+  "Sports":["Sports"],
+  "Toys":["Toys & Games"],
+  "All":[...new Set(products.map(p=>p.category))]
+};
   };
   const list=products.filter(p=>{
     const cat=filter==="All"||p.category===filter||(groups[filter]||[]).includes(p.category);
