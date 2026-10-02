@@ -287,3 +287,25 @@ document.getElementById("orderForm").addEventListener("submit",async e=>{
 loadLocations();
 loadProducts();
 renderCart();
+const loginBtn = document.getElementById("loginBtn");
+
+if (loginBtn) {
+  loginBtn.addEventListener("click", () => {
+    const phone = prompt("আপনার মোবাইল নম্বর দিন:");
+
+    if (!phone) return;
+
+    const cleanPhone = phone.replace(/\D/g, "");
+
+    if (cleanPhone.length < 10) {
+      alert("সঠিক মোবাইল নম্বর দিন।");
+      return;
+    }
+
+    localStorage.setItem("beautyShoppingUser", cleanPhone);
+
+    alert("✅ Login সফল হয়েছে!\nমোবাইল: " + cleanPhone);
+
+    loginBtn.querySelector("small").textContent = "My Account";
+  });
+}
