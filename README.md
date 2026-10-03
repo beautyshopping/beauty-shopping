@@ -27,7 +27,14 @@ Set a strong `ADMIN_PASSWORD` environment variable before production use.
 6. Health check: `http://localhost:3000/api/health`
 
 ## Render deployment
-This project includes `render.yaml` for a Node web service. Connect the GitHub repository to Render, create the service from the repo, and set `ADMIN_PASSWORD` as a secret environment variable.
+The project now uses PostgreSQL for the product catalog when `DATABASE_URL` is configured. The included `render.yaml` defines a Render Postgres database and automatically wires its connection string into the web service. Render Blueprints support this `fromDatabase` connection pattern.
 
-### Important data note
-The current starter stores products, orders, users and settings in JSON files and uploaded images in `uploads/`. On hosts with ephemeral filesystems, these files are not a durable production database. For a real launch, move these records to a managed database and image storage, or use persistent storage provided by the host.
+### Product persistence
+- Products, prices, discount prices, stock, featured status and product images are stored in PostgreSQL when deployed with `DATABASE_URL`.
+- Product images are stored as data URLs in the database, so they do not depend on Render's ephemeral local filesystem.
+- The server creates the `products` table automatically on startup.
+- If an old `data/products.json` exists and the database is empty, the server performs a one-time catalog migration.
+- For local development without `DATABASE_URL`, the existing JSON fallback remains available.
+
+### Existing Render service
+If this repository is already connected to an existing Render web service, create/connect a Render Postgres database and make sure the web service has a `DATABASE_URL` environment variable containing the database connection string before deploying the new code. If you use the Blueprint, sync the `render.yaml` so Render creates the database and wires `DATABASE_URL` automatically.
