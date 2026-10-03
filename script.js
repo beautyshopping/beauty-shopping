@@ -41,7 +41,8 @@ function matchesCategory(p, filter){
 
 function getImage(p){
   if(!p.image) return "";
- if(/^https?:\/\//i.test(p.image)) return p.image;
+  if(/^https?:\/\//i.test(p.image)) return p.image;
+  if(/^data:image\//i.test(p.image)) return p.image;
   return p.image.startsWith("/") ? p.image : "/" + p.image;
 }
 
