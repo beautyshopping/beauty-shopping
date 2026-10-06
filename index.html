@@ -8,19 +8,21 @@
 <title>Beauty Shopping — Order Now</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
   background:#f5f8fc;
   color:#111;
-  font-family:Arial,"Noto Sans Bengali",sans-serif
+  font-family:Arial,"Noto Sans Bengali",sans-serif;
 }
 
 .wrap{
   max-width:1100px;
   margin:auto;
-  padding:18px
+  padding:18px;
 }
 
 .top{
@@ -28,27 +30,30 @@ body{
   background:#fff;
   border-radius:24px;
   padding:22px 18px 14px;
-  box-shadow:0 8px 35px #153b7312
+  box-shadow:0 8px 35px #153b7312;
 }
 
 .logo{
   width:min(390px,90%);
   height:auto;
   display:block;
-  margin:auto
+  margin:auto;
 }
 
 .tag{
   font-size:17px;
   color:#555;
-  margin:7px 0 0
+  margin:7px 0 0;
 }
+
+
+/* PRODUCTS */
 
 .products{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
-  margin:20px 0
+  margin:20px 0;
 }
 
 .prod{
@@ -56,40 +61,49 @@ body{
   border-radius:20px;
   padding:10px;
   box-shadow:0 7px 25px #153b7310;
-  text-align:center
+  text-align:center;
 }
 
 .prod img{
   width:100%;
   height:250px;
   object-fit:cover;
-  border-radius:15px
+  border-radius:15px;
 }
 
 .prod h3{
   margin:10px 0 4px;
   color:#1046a4;
-  font-size:20px
+  font-size:20px;
 }
+
+
+/* ORDER BOX */
 
 .orderbox{
   background:#fff;
   border-radius:24px;
   padding:22px;
   box-shadow:0 10px 40px #153b7314;
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:25px
 }
 
+.order-title{
+  margin:0 0 18px;
+  color:#0c48aa;
+  font-size:25px;
+}
+
+
+/* FIELD */
+
 .field{
-  margin:13px 0
+  margin:13px 0;
 }
 
 .field label{
   display:block;
   font-weight:700;
-  margin-bottom:7px
+  margin-bottom:7px;
 }
 
 .field input,
@@ -101,117 +115,99 @@ body{
   border-radius:11px;
   font-size:16px;
   background:#fff;
-  outline:none
+  outline:none;
 }
 
 .field textarea{
   min-height:95px;
-  resize:vertical
+  resize:vertical;
 }
 
 .field input:focus,
 .field select:focus,
 .field textarea:focus{
   border-color:#f35b08;
-  box-shadow:0 0 0 3px #f35b0814
+  box-shadow:0 0 0 3px #f35b0814;
 }
 
-.grid2{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px
-}
 
-.side{
+/* ORDER SUMMARY */
+
+.order-summary{
+  margin-top:20px;
   border:1px solid #e0e5ed;
   border-radius:18px;
-  padding:18px
+  padding:18px;
+  background:#fff;
 }
 
-.side h2{
+.order-summary h2{
   margin:0 0 16px;
-  color:#0c48aa
+  color:#0c48aa;
 }
 
 .line{
   padding:13px 12px;
   border-radius:12px;
   background:#f7fbff;
-  margin:9px 0
+  margin:9px 0;
 }
 
 .line strong{
   display:block;
-  margin-bottom:3px
+  margin-bottom:3px;
 }
 
 .delivery{
   background:#fff5ec;
-  border:1px solid #ffd8bd
+  border:1px solid #ffd8bd;
 }
+
+
+/* TOTAL */
 
 .total{
   display:flex;
   justify-content:space-between;
   font-size:20px;
   font-weight:800;
-  margin:16px 0
+  margin:16px 0;
+  padding-top:8px;
 }
+
+
+/* SUBMIT */
 
 .btn{
   width:100%;
-  padding:16px;
+  padding:17px;
   border:0;
   border-radius:13px;
   background:#f45c08;
   color:#fff;
   font-size:20px;
   font-weight:800;
-  cursor:pointer
+  cursor:pointer;
+  margin-top:8px;
+}
+
+.btn:hover{
+  opacity:.92;
 }
 
 .btn:disabled{
   opacity:.65;
-  cursor:not-allowed
+  cursor:not-allowed;
 }
+
+
+/* MESSAGE */
 
 .note{
   text-align:center;
   color:#777;
   font-size:13px;
-  margin-top:11px
-}
-
-.footer{
-  margin-top:18px;
-  background:#0849b5;
-  color:white;
-  border-radius:22px;
-  padding:22px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-  text-align:center
-}
-
-.footer b{
-  display:block;
-  margin-bottom:4px
-}
-
-.copy{
-  text-align:center;
-  margin-top:15px;
-  color:#fff;
-  font-size:13px;
-  opacity:.9;
-  grid-column:1/-1
-}
-
-.loading{
-  color:#777;
-  font-size:13px;
-  margin-top:5px
+  margin-top:11px;
 }
 
 .success-box{
@@ -223,7 +219,7 @@ body{
   padding:15px;
   margin-top:15px;
   text-align:center;
-  font-weight:700
+  font-weight:700;
 }
 
 .error-box{
@@ -235,490 +231,722 @@ body{
   padding:15px;
   margin-top:15px;
   text-align:center;
-  font-weight:700
+  font-weight:700;
 }
 
+.loading{
+  color:#777;
+  font-size:13px;
+  margin-top:5px;
+}
+
+
+/* FOOTER */
+
+.footer{
+  margin-top:18px;
+  background:#0849b5;
+  color:white;
+  border-radius:22px;
+  padding:22px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  text-align:center;
+}
+
+.footer b{
+  display:block;
+  margin-bottom:4px;
+}
+
+.copy{
+  text-align:center;
+  margin-top:15px;
+  color:#fff;
+  font-size:13px;
+  opacity:.9;
+  grid-column:1/-1;
+}
+
+
+/* MOBILE */
+
 @media(max-width:800px){
+
   .products{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
   }
 
   .prod img{
-    height:auto
-  }
-
-  .orderbox{
-    grid-template-columns:1fr
+    height:auto;
   }
 
   .footer{
-    grid-template-columns:1fr 1fr
+    grid-template-columns:1fr 1fr;
   }
 }
 
-@media(max-width:520px){
-  .wrap{
-    padding:10px
-  }
 
-  .grid2{
-    grid-template-columns:1fr
+@media(max-width:520px){
+
+  .wrap{
+    padding:10px;
   }
 
   .footer{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
   }
 
   .logo{
-    width:100%
+    width:100%;
+  }
+
+  .orderbox{
+    padding:16px;
+  }
+
+  .order-title{
+    font-size:22px;
   }
 }
 </style>
 </head>
 
+
 <body>
 
 <div class="wrap">
 
-<!-- TOP -->
+
+<!-- =========================
+     TOP
+========================= -->
+
 <section class="top">
-  <img class="logo" src="logo.png" alt="Beauty Shopping">
+
+  <img
+    class="logo"
+    src="logo.png"
+    alt="Beauty Shopping"
+  >
+
   <div class="tag">
     আপনার পছন্দের পণ্য অর্ডার করুন — সারা বাংলাদেশে Cash on Delivery
   </div>
+
 </section>
 
 
-<!-- PRODUCTS -->
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
 <section class="products">
 
   <div class="prod">
-    <img src="product1.png" alt="AIRPHONE">
+
+    <img
+      src="product1.png"
+      alt="AIRPHONE"
+    >
+
     <h3>🎧 AIRPHONE</h3>
+
   </div>
 
+
   <div class="prod">
-    <img src="product3.png" alt="AIRBUDS">
+
+    <img
+      src="product3.png"
+      alt="AIRBUDS"
+    >
+
     <h3>🎧 AIRBUDS</h3>
+
   </div>
 
+
   <div class="prod">
-    <img src="product2.png" alt="NECKBAND">
+
+    <img
+      src="product2.png"
+      alt="NECKBAND"
+    >
+
     <h3>🎵 NECKBAND</h3>
+
   </div>
 
 </section>
 
 
-<!-- ORDER -->
+
+<!-- =========================
+     ORDER FORM
+========================= -->
+
 <section class="orderbox">
 
-<div>
-
-<h2 style="margin-top:0;color:#0c48aa">
-📦 ডেলিভারি তথ্য
-</h2>
+  <h2 class="order-title">
+    📦 অর্ডার করতে নিচের তথ্য দিন
+  </h2>
 
 
-<div class="field">
-  <label>কাস্টমারের নাম *</label>
-  <input id="name" placeholder="আপনার নাম লিখুন">
-</div>
+  <!-- NAME -->
 
+  <div class="field">
 
-<div class="field">
-  <label>মোবাইল নম্বর *</label>
-  <input id="phone" inputmode="tel" placeholder="01XXXXXXXXX">
-</div>
+    <label>
+      কাস্টমারের নাম *
+    </label>
 
+    <input
+      id="name"
+      type="text"
+      placeholder="আপনার নাম লিখুন"
+    >
 
-<div class="field">
-
-  <label>জেলা *</label>
-
-  <select id="district">
-    <option value="">জেলা নির্বাচন করুন</option>
-  </select>
-
-  <div id="districtStatus" class="loading">
-    জেলার তালিকা লোড হচ্ছে...
   </div>
 
-</div>
 
 
-<div class="field">
+  <!-- PHONE -->
 
-  <label>থানা / উপজেলা *</label>
+  <div class="field">
 
-  <select id="upazila" disabled>
-    <option value="">আগে জেলা নির্বাচন করুন</option>
-  </select>
+    <label>
+      মোবাইল নম্বর *
+    </label>
 
-</div>
+    <input
+      id="phone"
+      type="tel"
+      inputmode="tel"
+      maxlength="11"
+      placeholder="01XXXXXXXXX"
+    >
 
+  </div>
 
-<div class="field">
 
-  <label>সম্পূর্ণ ঠিকানা *</label>
 
-  <textarea
-    id="address"
-    placeholder="বাড়ি, রোড, গ্রাম/এলাকা, বিস্তারিত ঠিকানা লিখুন">
-  </textarea>
+  <!-- DISTRICT -->
 
-</div>
+  <div class="field">
 
+    <label>
+      জেলা *
+    </label>
 
-<div class="delivery line">
+    <select id="district">
 
-  <strong>🚚 সারা বাংলাদেশে ডেলিভারি</strong>
+      <option value="">
+        জেলা নির্বাচন করুন
+      </option>
 
-  ডেলিভারি চার্জ মাত্র <b>৳99</b>
+    </select>
 
-</div>
+    <div
+      id="districtStatus"
+      class="loading"
+    >
+      জেলার তালিকা লোড হচ্ছে...
+    </div>
 
+  </div>
 
-<div class="line">
 
-  <strong>💵 পেমেন্ট করুন</strong>
 
-  Cash on Delivery
+  <!-- UPAZILA -->
 
-</div>
+  <div class="field">
 
+    <label>
+      থানা / উপজেলা *
+    </label>
 
-<div class="total">
+    <select
+      id="upazila"
+      disabled
+    >
 
-  <span>ডেলিভারি চার্জ</span>
+      <option value="">
+        আগে জেলা নির্বাচন করুন
+      </option>
 
-  <span>৳99</span>
+    </select>
 
-</div>
+  </div>
 
 
-<button
-  class="btn"
-  id="submitBtn"
-  onclick="submitOrder()">
 
-  🛍️ অর্ডার সাবমিট করুন
+  <!-- ADDRESS -->
 
-</button>
+  <div class="field">
 
+    <label>
+      সম্পূর্ণ ঠিকানা *
+    </label>
 
-<div id="successBox" class="success-box">
-  ✅ আপনার অর্ডার সফলভাবে গ্রহণ করা হয়েছে।
-</div>
+    <textarea
+      id="address"
+      placeholder="বাড়ি, রোড, গ্রাম/এলাকা, বিস্তারিত ঠিকানা লিখুন"
+    ></textarea>
 
+  </div>
 
-<div id="errorBox" class="error-box">
-  ❌ অর্ডার সাবমিট হয়নি। আবার চেষ্টা করুন।
-</div>
 
 
-<div class="note">
-  🔒 আপনার তথ্য সম্পূর্ণ নিরাপদ এবং গোপনীয় রাখা হবে।
-</div>
+  <!-- =========================
+       PRODUCT NAME
+  ========================= -->
 
-</div>
+  <div class="field">
 
+    <label>
+      মডেল / প্রোডাক্ট নাম *
+    </label>
 
-<!-- SIDE -->
+    <input
+      id="model"
+      type="text"
+      placeholder="মডেল / প্রোডাক্ট নাম লিখুন"
+    >
 
-<aside class="side">
+  </div>
 
-<h2>🛒 আপনার অর্ডার</h2>
 
 
-<div class="field">
+  <!-- =========================
+       PRICE
+  ========================= -->
 
-  <label>মডেল / প্রোডাক্ট নাম *</label>
+  <div class="field">
 
-  <input
-    id="model"
-    placeholder="মডেল / প্রোডাক্ট নাম লিখুন">
+    <label>
+      প্রাইস (৳) *
+    </label>
 
-</div>
+    <input
+      id="price"
+      type="number"
+      inputmode="numeric"
+      min="0"
+      placeholder="প্রাইস লিখুন"
+    >
 
+  </div>
 
-<div class="field">
 
-  <label>প্রাইস (৳) *</label>
 
-  <input
-    id="price"
-    inputmode="numeric"
-    placeholder="প্রাইস লিখুন">
+  <!-- =========================
+       ORDER SUMMARY
+  ========================= -->
 
-</div>
+  <div class="order-summary">
 
+    <h2>
+      🛒 অর্ডারের তথ্য
+    </h2>
 
-<div class="line delivery">
 
-  <strong>🚚 সারা বাংলাদেশে ডেলিভারি</strong>
+    <div class="line delivery">
 
-  ডেলিভারি চার্জ <b>৳99</b>
+      <strong>
+        🚚 ডেলিভারি চার্জ
+      </strong>
 
-</div>
+      সারা বাংলাদেশে মাত্র <b>৳99</b>
 
+    </div>
 
-<div class="line">
 
-  <strong>🛡️ অরিজিনাল প্রোডাক্ট</strong>
+    <div class="line">
 
-  ১০০% কোয়ালিটি গ্যারান্টি
+      <strong>
+        💵 পেমেন্ট
+      </strong>
 
-</div>
+      Cash on Delivery (COD)
 
+    </div>
 
-<div class="line">
 
-  <strong>✅ ক্যাশ অন ডেলিভারি</strong>
+    <div class="total">
 
-  পণ্য হাতে পেয়ে টাকা দিন
+      <span>
+        ডেলিভারি চার্জ
+      </span>
 
-</div>
+      <span>
+        ৳99
+      </span>
 
-</aside>
+    </div>
+
+
+    <!-- =========================
+         SUBMIT BUTTON
+         একদম সবশেষে
+    ========================= -->
+
+    <button
+      type="button"
+      class="btn"
+      id="submitBtn"
+      onclick="submitOrder()"
+    >
+
+      🛍️ অর্ডার সাবমিট করুন
+
+    </button>
+
+
+    <!-- SUCCESS -->
+
+    <div
+      id="successBox"
+      class="success-box"
+    >
+
+      ✅ আপনার অর্ডার সফলভাবে গ্রহণ করা হয়েছে।
+
+    </div>
+
+
+    <!-- ERROR -->
+
+    <div
+      id="errorBox"
+      class="error-box"
+    >
+
+      ❌ অর্ডার সাবমিট হয়নি। আবার চেষ্টা করুন।
+
+    </div>
+
+
+    <div class="note">
+
+      🔒 আপনার তথ্য সম্পূর্ণ নিরাপদ এবং গোপনীয় রাখা হবে।
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <section class="footer">
 
-<div>
-  🏅
-  <b>১০০% অরিজিনাল</b>
-  প্রিমিয়াম কোয়ালিটি
-</div>
+  <div>
 
-<div>
-  🎧
-  <b>কাস্টমার সাপোর্ট</b>
-  সহায়তা
-</div>
+    🏅
 
-<div>
-  🚚
-  <b>ফাস্ট ডেলিভারি</b>
-  সারা বাংলাদেশে
-</div>
+    <b>
+      ১০০% অরিজিনাল
+    </b>
 
-<div>
-  🛡️
-  <b>নিরাপদ পেমেন্ট</b>
-  ক্যাশ অন ডেলিভারি
-</div>
+    প্রিমিয়াম কোয়ালিটি
 
-<div class="copy">
-  © 2026 Beauty Shopping | All Rights Reserved
-</div>
+  </div>
+
+
+  <div>
+
+    🎧
+
+    <b>
+      কাস্টমার সাপোর্ট
+    </b>
+
+    সহায়তা
+
+  </div>
+
+
+  <div>
+
+    🚚
+
+    <b>
+      ফাস্ট ডেলিভারি
+    </b>
+
+    সারা বাংলাদেশে
+
+  </div>
+
+
+  <div>
+
+    🛡️
+
+    <b>
+      নিরাপদ পেমেন্ট
+    </b>
+
+    ক্যাশ অন ডেলিভারি
+
+  </div>
+
+
+  <div class="copy">
+
+    © 2026 Beauty Shopping | All Rights Reserved
+
+  </div>
 
 </section>
 
 </div>
+
 
 
 <script>
 
-/* =========================================================
-   GOOGLE APPS SCRIPT URL
-   ========================================================= */
-
-const SCRIPT_URL =
-'https://script.google.com/macros/s/AKfycbyuAzLE219UnIYP-bTV1IwZrFIwVGXuhB17_LLrCz5SXVbHypSSoW7yr_uto4krCczu/exec';
-
 
 /* =========================================================
-   DISTRICT / UPAZILA
-   ========================================================= */
+   BANGLADESH DISTRICT / UPAZILA
+========================================================= */
 
 const districtEl =
-  document.getElementById('district');
+  document.getElementById("district");
+
 
 const upazilaEl =
-  document.getElementById('upazila');
+  document.getElementById("upazila");
+
 
 const statusEl =
-  document.getElementById('districtStatus');
+  document.getElementById("districtStatus");
+
 
 let bdData = [];
 
 
-/*
-  Stable Bangladesh location dataset.
-  8 divisions
-  64 districts
-  495 upazilas
-*/
-
 const LOCATION_URL =
-'https://iqbalhasandev.github.io/bangladesh-geo-json/bangladesh-geo.json';
+  "https://iqbalhasandev.github.io/bangladesh-geo-json/bangladesh-geo.json";
 
+
+
+/* =========================================================
+   LOAD LOCATION DATA
+========================================================= */
 
 async function loadLocationData(){
 
   statusEl.textContent =
-    'জেলার তালিকা লোড হচ্ছে...';
+    "জেলার তালিকা লোড হচ্ছে...";
+
 
   try{
 
     const response =
-      await fetch(LOCATION_URL, {
-        cache:'no-store'
-      });
+      await fetch(
+        LOCATION_URL,
+        {
+          cache:"no-store"
+        }
+      );
+
 
     if(!response.ok){
+
       throw new Error(
-        'Location data could not be loaded'
+        "Location data could not be loaded"
       );
+
     }
+
 
     const data =
       await response.json();
 
-    if(!Array.isArray(data) || !data.length){
+
+    if(
+      !Array.isArray(data) ||
+      !data.length
+    ){
+
       throw new Error(
-        'Invalid location data'
+        "Invalid location data"
       );
+
     }
+
 
     bdData = data;
 
-
-    /*
-      Collect all districts
-    */
 
     const districts = [];
 
     const seen = new Set();
 
 
-    bdData.forEach(division => {
+    bdData.forEach(
+      division => {
 
-      const list =
-        Array.isArray(division.districts)
+        const list =
+          Array.isArray(
+            division.districts
+          )
           ? division.districts
           : [];
 
 
-      list.forEach(district => {
+        list.forEach(
+          district => {
 
-        const en =
-          district.name || '';
-
-        const bn =
-          district.bn_name ||
-          district.name ||
-          '';
+            const en =
+              district.name || "";
 
 
-        const key =
-          en.toLowerCase();
+            const bn =
+              district.bn_name ||
+              district.name ||
+              "";
 
 
-        if(en && !seen.has(key)){
-
-          seen.add(key);
-
-          districts.push({
-            en:en,
-            bn:bn
-          });
-
-        }
-
-      });
-
-    });
+            const key =
+              en.toLowerCase();
 
 
-    /*
-      Sort districts by Bangla name
-    */
+            if(
+              en &&
+              !seen.has(key)
+            ){
+
+              seen.add(key);
+
+
+              districts.push({
+                en:en,
+                bn:bn
+              });
+
+            }
+
+          }
+        );
+
+      }
+    );
+
 
     districts.sort(
       (a,b) =>
         a.bn.localeCompare(
           b.bn,
-          'bn'
+          "bn"
         )
     );
 
-
-    /*
-      Put districts into select
-    */
 
     districtEl.innerHTML =
       '<option value="">জেলা নির্বাচন করুন</option>';
 
 
-    districts.forEach(district => {
+    districts.forEach(
+      district => {
 
-      const option =
-        document.createElement('option');
-
-      option.value =
-        district.en;
-
-      option.textContent =
-        district.bn;
-
-      districtEl.appendChild(option);
-
-    });
+        const option =
+          document.createElement(
+            "option"
+          );
 
 
-    statusEl.textContent =
-      'জেলা নির্বাচন করুন, তারপর ওই জেলার থানা/উপজেলা আসবে।';
+        option.value =
+          district.en;
 
 
-  }catch(error){
+        option.textContent =
+          district.bn;
+
+
+        districtEl.appendChild(
+          option
+        );
+
+      }
+    );
+
+
+    if(districts.length > 0){
+
+      statusEl.textContent =
+        "জেলা নির্বাচন করুন, তারপর উপজেলা নির্বাচন করুন।";
+
+    }
+    else{
+
+      throw new Error(
+        "No districts found"
+      );
+
+    }
+
+
+  }
+  catch(error){
 
     console.error(
-      'Location loading error:',
+      "Location loading error:",
       error
     );
+
 
     districtEl.innerHTML =
       '<option value="">জেলা লোড হয়নি</option>';
 
+
     statusEl.textContent =
-      'জেলার তালিকা লোড হয়নি। পেজটি Refresh করুন।';
+      "জেলার তালিকা লোড হয়নি। পেজটি Refresh করুন।";
 
   }
 
 }
 
 
-/*
-  Find selected district
-*/
+
+/* =========================================================
+   FIND DISTRICT
+========================================================= */
 
 function findDistrict(name){
 
   const target =
-    String(name).toLowerCase();
+    String(name)
+      .toLowerCase();
 
 
-  for(const division of bdData){
+  for(
+    const division of bdData
+  ){
 
     const districts =
-      Array.isArray(division.districts)
-        ? division.districts
-        : [];
+      Array.isArray(
+        division.districts
+      )
+      ? division.districts
+      : [];
 
 
-    for(const district of districts){
+    for(
+      const district of districts
+    ){
 
       if(
         String(
-          district.name || ''
+          district.name || ""
         ).toLowerCase() === target
       ){
 
@@ -736,22 +964,27 @@ function findDistrict(name){
 }
 
 
-/*
-  District change
-*/
+
+/* =========================================================
+   DISTRICT CHANGE
+========================================================= */
 
 districtEl.addEventListener(
-  'change',
+  "change",
   function(){
 
     upazilaEl.innerHTML =
       '<option value="">থানা / উপজেলা নির্বাচন করুন</option>';
 
-    upazilaEl.disabled = true;
+
+    upazilaEl.disabled =
+      true;
 
 
     if(!districtEl.value){
+
       return;
+
     }
 
 
@@ -789,51 +1022,58 @@ districtEl.addEventListener(
     }
 
 
-    upazilas.forEach(upazila => {
+    upazilas.forEach(
+      upazila => {
 
-      const option =
-        document.createElement('option');
-
-
-      option.value =
-        upazila.name || '';
-
-
-      option.textContent =
-        upazila.bn_name ||
-        upazila.name ||
-        '';
+        const option =
+          document.createElement(
+            "option"
+          );
 
 
-      upazilaEl.appendChild(
-        option
-      );
-
-    });
+        option.value =
+          upazila.name || "";
 
 
-    upazilaEl.disabled = false;
+        option.textContent =
+          upazila.bn_name ||
+          upazila.name ||
+          "";
+
+
+        upazilaEl.appendChild(
+          option
+        );
+
+      }
+    );
+
+
+    upazilaEl.disabled =
+      false;
 
   }
 );
 
 
-/* =========================================================
-   SUBMIT ORDER
-   ========================================================= */
 
-async function submitOrder(){
+/* =========================================================
+   SUBMIT ORDER → GOOGLE SHEET
+========================================================= */
+
+function submitOrder(){
+
 
   const name =
     document
-      .getElementById('name')
+      .getElementById("name")
       .value
       .trim();
 
 
   const phone =
     document
-      .getElementById('phone')
+      .getElementById("phone")
       .value
       .trim();
 
@@ -847,7 +1087,8 @@ async function submitOrder(){
       .options[
         districtEl.selectedIndex
       ]
-      ?.text || district;
+      ?.text ||
+      district;
 
 
   const upazila =
@@ -859,62 +1100,59 @@ async function submitOrder(){
       .options[
         upazilaEl.selectedIndex
       ]
-      ?.text || upazila;
+      ?.text ||
+      upazila;
 
 
   const address =
     document
-      .getElementById('address')
+      .getElementById("address")
       .value
       .trim();
 
 
   const model =
     document
-      .getElementById('model')
+      .getElementById("model")
       .value
       .trim();
 
 
   const price =
     document
-      .getElementById('price')
+      .getElementById("price")
       .value
       .trim();
 
 
   const submitBtn =
     document.getElementById(
-      'submitBtn'
+      "submitBtn"
     );
 
 
   const successBox =
     document.getElementById(
-      'successBox'
+      "successBox"
     );
 
 
   const errorBox =
     document.getElementById(
-      'errorBox'
+      "errorBox"
     );
 
 
-  /*
-    Hide old messages
-  */
-
   successBox.style.display =
-    'none';
+    "none";
+
 
   errorBox.style.display =
-    'none';
+    "none";
 
 
-  /*
-    Required fields
-  */
+
+  /* REQUIRED */
 
   if(
     !name ||
@@ -927,7 +1165,7 @@ async function submitOrder(){
   ){
 
     alert(
-      'দয়া করে সব তথ্য পূরণ করুন।'
+      "দয়া করে সব তথ্য পূরণ করুন।"
     );
 
     return;
@@ -935,9 +1173,8 @@ async function submitOrder(){
   }
 
 
-  /*
-    Bangladesh mobile validation
-  */
+
+  /* PHONE CHECK */
 
   if(
     !/^01[3-9]\d{8}$/.test(
@@ -946,7 +1183,7 @@ async function submitOrder(){
   ){
 
     alert(
-      'সঠিক বাংলাদেশি মোবাইল নম্বর দিন।'
+      "সঠিক বাংলাদেশি মোবাইল নম্বর দিন।"
     );
 
     return;
@@ -954,9 +1191,8 @@ async function submitOrder(){
   }
 
 
-  /*
-    Price validation
-  */
+
+  /* PRICE CHECK */
 
   if(
     !/^\d+(\.\d+)?$/.test(
@@ -965,7 +1201,7 @@ async function submitOrder(){
   ){
 
     alert(
-      'সঠিক প্রাইস লিখুন।'
+      "সঠিক প্রাইস লিখুন।"
     );
 
     return;
@@ -973,20 +1209,19 @@ async function submitOrder(){
   }
 
 
-  /*
-    Disable button
-  */
+
+  /* BUTTON */
 
   submitBtn.disabled =
     true;
 
+
   submitBtn.textContent =
-    'অর্ডার সাবমিট হচ্ছে...';
+    "অর্ডার সাবমিট হচ্ছে...";
 
 
-  /*
-    Data sent to Google Sheet
-  */
+
+  /* DATA */
 
   const orderData = {
 
@@ -1007,147 +1242,155 @@ async function submitOrder(){
   };
 
 
-  try{
 
-    /*
-      IMPORTANT:
-      No WhatsApp code here.
-      No window.open().
-      No wa.me.
-    */
+  /* GOOGLE APPS SCRIPT */
 
-    const response =
-      await fetch(
-        SCRIPT_URL,
-        {
-          method:'POST',
+  google.script.run
 
-          headers:{
-            'Content-Type':
-              'text/plain;charset=utf-8'
-          },
+    .withSuccessHandler(
+      function(result){
 
-          body:
-            JSON.stringify(
-              orderData
-            )
+
+        if(
+          !result ||
+          result.success !== true
+        ){
+
+          errorBox.textContent =
+            "❌ অর্ডার সাবমিট হয়নি। আবার চেষ্টা করুন।";
+
+
+          errorBox.style.display =
+            "block";
+
+
+          submitBtn.disabled =
+            false;
+
+
+          submitBtn.textContent =
+            "🛍️ অর্ডার সাবমিট করুন";
+
+
+          return;
+
         }
-      );
 
 
-    const result =
-      await response.json();
+
+        /* SUCCESS */
+
+        successBox.textContent =
+          "✅ আপনার অর্ডার সফলভাবে গ্রহণ করা হয়েছে।";
 
 
-    if(!result.success){
-
-      throw new Error(
-        result.error ||
-        'Order submission failed'
-      );
-
-    }
+        successBox.style.display =
+          "block";
 
 
-    /*
-      SUCCESS
-    */
 
-    successBox.textContent =
-      '✅ আপনার অর্ডার সফলভাবে গ্রহণ করা হয়েছে।';
+        /* CLEAR */
 
-    successBox.style.display =
-      'block';
+        document
+          .getElementById("name")
+          .value = "";
 
 
-    /*
-      Clear form
-    */
-
-    document
-      .getElementById('name')
-      .value = '';
+        document
+          .getElementById("phone")
+          .value = "";
 
 
-    document
-      .getElementById('phone')
-      .value = '';
+        districtEl.value =
+          "";
 
 
-    districtEl.value =
-      '';
+        upazilaEl.innerHTML =
+          '<option value="">আগে জেলা নির্বাচন করুন</option>';
 
 
-    upazilaEl.innerHTML =
-      '<option value="">আগে জেলা নির্বাচন করুন</option>';
-
-    upazilaEl.disabled =
-      true;
+        upazilaEl.disabled =
+          true;
 
 
-    document
-      .getElementById('address')
-      .value = '';
+        document
+          .getElementById("address")
+          .value = "";
 
 
-    document
-      .getElementById('model')
-      .value = '';
+        document
+          .getElementById("model")
+          .value = "";
 
 
-    document
-      .getElementById('price')
-      .value = '';
+        document
+          .getElementById("price")
+          .value = "";
 
 
-    /*
-      Scroll to success message
-    */
 
-    successBox.scrollIntoView({
-      behavior:'smooth',
-      block:'center'
-    });
+        successBox.scrollIntoView({
+          behavior:"smooth",
+          block:"center"
+        });
 
 
-  }catch(error){
+        submitBtn.disabled =
+          false;
 
-    console.error(
-      'Order error:',
-      error
+
+        submitBtn.textContent =
+          "🛍️ অর্ডার সাবমিট করুন";
+
+      }
+    )
+
+
+    .withFailureHandler(
+      function(error){
+
+        console.error(
+          "Order error:",
+          error
+        );
+
+
+        errorBox.textContent =
+          "❌ অর্ডার সাবমিট হয়নি। আবার চেষ্টা করুন।";
+
+
+        errorBox.style.display =
+          "block";
+
+
+        errorBox.scrollIntoView({
+          behavior:"smooth",
+          block:"center"
+        });
+
+
+        submitBtn.disabled =
+          false;
+
+
+        submitBtn.textContent =
+          "🛍️ অর্ডার সাবমিট করুন";
+
+      }
+    )
+
+
+    .saveOrder(
+      orderData
     );
-
-
-    errorBox.textContent =
-      '❌ অর্ডার সাবমিট হয়নি। আবার চেষ্টা করুন।';
-
-
-    errorBox.style.display =
-      'block';
-
-
-    errorBox.scrollIntoView({
-      behavior:'smooth',
-      block:'center'
-    });
-
-
-  }finally{
-
-    submitBtn.disabled =
-      false;
-
-    submitBtn.textContent =
-      '🛍️ অর্ডার সাবমিট করুন';
-
-  }
 
 }
 
 
+
 /* =========================================================
-   START LOCATION LOADING
-   ========================================================= */
+   START
+========================================================= */
 
 loadLocationData();
 
