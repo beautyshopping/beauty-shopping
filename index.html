@@ -143,8 +143,40 @@ function submitOrder(){
   if(!/^\d+(\.\d+)?$/.test(price)){alert('সঠিক প্রাইস লিখুন।');return;}
   const total=Number(price)+99;
   const msg=`নতুন অর্ডার\n\nপণ্য/মডেল: ${model}\nপ্রাইস: ৳${price}\nডেলিভারি: ৳99\nমোট: ৳${total}\n\nনাম: ${name}\nজেলা: ${districtText}\nথানা/উপজেলা: ${upazilaText}\nমোবাইল: ${phone}\nঠিকানা: ${address}\n\nপেমেন্ট: Cash on Delivery`;
-  window.open('https://wa.me/8801750475598?text='+encodeURIComponent(msg),'_blank');
+ ```javascript
+function doPost(e) {
+  try {
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
+    const data = JSON.parse(e.postData.contents);
+
+    sheet.appendRow([
+      new Date(),
+      data.name || "",
+      data.district || "",
+      data.upazila || "",
+      data.phone || "",
+      data.address || "",
+      data.product || "",
+      data.price || ""
+    ]);
+
+    return ContentService
+      .createTextOutput(JSON.stringify({
+        success: true
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({
+        success: false,
+        error: error.toString()
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
 }
+```
+
 
 loadLocationData();
 </script></body></html>
