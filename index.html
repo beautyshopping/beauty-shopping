@@ -86,7 +86,7 @@ f<!doctype html>
   </main>
 <script>
   // Google Apps Script order endpoint from your existing setup.
-  const ORDER_ENDPOINT = "https://script.google.com/macros/s/AKfycbxH4ns4UPM3guEQtkC4kBOkXXoXGMndX2ngBmNPoBre6jJGBQg4x25JDDYMbj-sWfSS/exec";
+  const ORDER_ENDPOINT = "https://script.google.com/macros/s/AKfycbxaPsx0vUobVzpiUqxGoJc4SNRgqotq5kbIFlzAX3ktFjKkqct9cYKJWf_Q9X2p3yex/exec";
   const districts = ["ঢাকা","গাজীপুর","নারায়ণগঞ্জ","নরসিংদী","মানিকগঞ্জ","মুন্সিগঞ্জ","ফরিদপুর","গোপালগঞ্জ","মাদারীপুর","রাজবাড়ী","শরীয়তপুর","টাঙ্গাইল","কিশোরগঞ্জ","ময়মনসিংহ","জামালপুর","নেত্রকোনা","শেরপুর","চট্টগ্রাম","কক্সবাজার","কুমিল্লা","ব্রাহ্মণবাড়িয়া","চাঁদপুর","ফেনী","লক্ষ্মীপুর","নোয়াখালী","খাগড়াছড়ি","রাঙ্গামাটি","বান্দরবান","রাজশাহী","বগুড়া","জয়পুরহাট","নওগাঁ","নাটোর","চাঁপাইনবাবগঞ্জ","পাবনা","সিরাজগঞ্জ","আবারও?","খুলনা","বাগেরহাট","চুয়াডাঙ্গা","যশোর","ঝিনাইদহ","কুষ্টিয়া","মাগুরা","মেহেরপুর","নড়াইল","সাতক্ষীরা","বরিশাল","বরগুনা","ভোলা","ঝালকাঠি","পটুয়াখালী","পিরোজপুর","রংপুর","দিনাজপুর","গাইবান্ধা","কুড়িগ্রাম","লালমনিরহাট","নীলফামারী","পঞ্চগড়","ঠাকুরগাঁও","সিলেট","হবিগঞ্জ","মৌলভীবাজার","সুনামগঞ্জ"];
   const districtSelect = document.getElementById("district");
   districts.filter(d => d !== "আবারও?").sort((a,b)=>a.localeCompare(b,"bn")).forEach(d => { const o=document.createElement("option"); o.value=d; o.textContent=d; districtSelect.appendChild(o); });
